@@ -1,0 +1,15 @@
+.green {
+    color: seagreen;
+}
+
+.red {
+    color: tomato;
+}
+
+.orange {
+    color: orange;
+}
+
+.upercase {
+    text-transform: uppercase;
+}
