@@ -27,6 +27,10 @@
             </span>
         </h1>
 
+        <input type="number" v-model="value">
+        <br>
+        <span>{{ convertedValue }}</span>
+
         <ul v-show="showPrices">
             <li v-for="(price, i) in pricesWithDays"
                 v-bind:key="'price' + i"
