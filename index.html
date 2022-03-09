@@ -11,38 +11,9 @@
     <div id="app" v-bind:style="{
         background: '#' + backgroundColor
     }">
-        <img v-on:mouseover="toggleShowPrices"
-             v-on:mouseout="toggleShowPrices"
-             v-bind:src="img" v-bind:alt="name" height="128px" width="128px">
-        <h1 v-bind:class="changePercent > 0 ? 'green' : 'red'">
-            {{ title }}
-            <span v-if="changePercent > 0">🤙🏼</span>
-            <span v-else-if="changePercent < 0">😨</span>
-            <span v-else>🙈</span>
-
-            <br>
-
-            <span v-on:click="toggleShowPrices">
-                {{ showPrices ? "🙈" : "🙊" }}
-            </span>
-        </h1>
-
-        <input type="number" v-model="value">
-        <br>
-        <span>{{ convertedValue }}</span>
-
-        <ul v-show="showPrices">
-            <li v-for="(price, i) in pricesWithDays"
-                v-bind:key="'price' + i"
-                v-bind:class="{
-                    orange: price.value === currentPrice,
-                    red: price.value < currentPrice,
-                    green: price.value > currentPrice
-                }"
-                class="uppercase">
-                {{ price.day + ' - ' + price.value }}
-            </li>
-        </ul>
+        <coin-detail 
+            v-bind:coin="btc"
+        ></coin-detail>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
